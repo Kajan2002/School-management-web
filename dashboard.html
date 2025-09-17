@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dashboard - School Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <button class="mobile-menu-btn" onclick="toggleMobileSidebar()">☰</button>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">School Management</div>
+            <div class="sidebar-subtitle">Education System</div>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="dashboard.html" class="active">
+                        <span class="nav-icon"><ion-icon name="analytics-outline"></ion-icon></span>Dashboard
+                    </a></li>
+                <li><a href="students.html">
+                        <span class="nav-icon"><ion-icon name="people-outline"></ion-icon></span>Students
+                    </a></li>
+                <li><a href="subjects.html">
+                        <span class="nav-icon"><ion-icon name="book-outline"></ion-icon></span>Subjects
+                    </a></li>
+                <li><a href="grades.html">
+                        <span class="nav-icon"><ion-icon name="ribbon-outline"></ion-icon></span>Grades
+                    </a></li>
+                <li><a href="analytics.html">
+                        <span class="nav-icon"><ion-icon name="podium-outline"></ion-icon></span>Analytics
+                    </a></li>
+                <li><a href="#" onclick="logout()">
+                        <span class="nav-icon"><ion-icon name="exit-outline"></ion-icon></span>Logout
+                    </a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="page-header">
+            <h1 class="page-title">Dashboard</h1>
+            <p class="page-subtitle">Welcome to your School Management System overview</p>
+            <div class="page-breadcrumb">
+                <span>Home</span>
+                <span class="breadcrumb-separator">›</span>
+                <span>Dashboard</span>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Dashboard Overview</h2>
+                    <p>Welcome to the School Management System</p>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalStudents">0</div>
+                        <div class="stat-label">Total Students</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalSubjects">0</div>
+                        <div class="stat-label">Total Subjects</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalEnrollments">0</div>
+                        <div class="stat-label">Total Enrollments</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="averageGrade">0</div>
+                        <div class="stat-label">Average Grade</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Recent Activities</h3>
+                </div>
+                <div id="recentActivities">
+                    <p>Loading recent activities...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script>
+        function toggleMobileSidebar() {
+            document.getElementById('sidebar').classList.toggle('mobile-open');
+        }
+    </script>
+</body>
+
+</html>
